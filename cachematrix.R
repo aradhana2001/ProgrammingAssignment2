@@ -8,12 +8,16 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL
+        #  sets the matrix && resets the cached value of "inverse of matrix"
         set <- function(y) {
                 x <<- y
                 i <<- NULL
         }
+         #  get the matrix 
         get <- function() x
+        #  cache the value of "inverse of matrix"
         setInverse <- function(inv) i <<- inv
+        #  get the value of "inverse of matrix"
         getInverse <- function() i
         list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 
